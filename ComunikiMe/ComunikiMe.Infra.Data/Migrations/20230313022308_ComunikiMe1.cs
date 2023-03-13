@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ComunikiMe.Infra.Data.Migrations
 {
-    public partial class ComunikiMeMigration1 : Migration
+    public partial class ComunikiMe1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,7 @@ namespace ComunikiMe.Infra.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserName = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "VARCHAR(60)", maxLength: 60, nullable: false),
-                    Password = table.Column<string>(type: "VARCHAR(6)", maxLength: 6, nullable: false),
+                    Password = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false),
                     Permission = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValueSql: "GETDATE()")
                 },

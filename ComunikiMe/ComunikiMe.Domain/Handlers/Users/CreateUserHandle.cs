@@ -19,7 +19,7 @@ namespace ComunikiMe.Domain.Handlers.Users
 
         public CreateUserHandle(IUserRepository userRepository)
         {
-            _userRepository = userRepository;
+            _userRepository = userRepository;   
         }
 
         public ICommandResult Handler(CreateUserCommand command)
@@ -40,7 +40,6 @@ namespace ComunikiMe.Domain.Handlers.Users
 
             command.Password = Password.Encrypt(command.Password);
 
-            //User newUser = new User(command.UserName, command.Email, command.Password, command.Permission);
             User newUser = new User(command.UserName, command.Email, command.Password, command.Permission);
 
             if (!newUser.IsValid)

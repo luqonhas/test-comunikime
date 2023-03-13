@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ComunikiMe.Infra.Data.Migrations
 {
     [DbContext(typeof(ComunikiMeContext))]
-    [Migration("20230311164745_ComunikiMe-Migration1")]
-    partial class ComunikiMeMigration1
+    [Migration("20230313022308_ComunikiMe1")]
+    partial class ComunikiMe1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -113,8 +113,8 @@ namespace ComunikiMe.Infra.Data.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(6)
-                        .HasColumnType("VARCHAR(6)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR(200)");
 
                     b.Property<int>("Permission")
                         .HasColumnType("int");

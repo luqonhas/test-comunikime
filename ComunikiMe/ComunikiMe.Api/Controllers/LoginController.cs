@@ -35,22 +35,6 @@ namespace ComunikiMe.Api.Controllers
             return new GenericCommandResult(false, result.Message, result.Data);
         }
 
-        [Route("signin/userName")]
-        [HttpPost]
-        public GenericCommandResult SignInUserName(LoginUserNameCommand command, [FromServices] LoginUserNameHandle handle)
-        {
-            var result = (GenericCommandResult)handle.Handler(command);
-
-            if (result.SuccessFailure)
-            {
-                var token = GenerateJSONWebToken((User)result.Data);
-
-                return new GenericCommandResult(true, "User successfully logged in!", new { token = token });
-            }
-
-            return new GenericCommandResult(false, result.Message, result.Data);
-        }
-
         private string GenerateJSONWebToken(User userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("comunikime-authentication-key"));

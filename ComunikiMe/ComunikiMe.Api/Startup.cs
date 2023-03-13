@@ -1,3 +1,4 @@
+using ComunikiMe.Domain.Handlers.Authentications;
 using ComunikiMe.Domain.Handlers.Carts;
 using ComunikiMe.Domain.Handlers.Products;
 using ComunikiMe.Domain.Handlers.Users;
@@ -121,10 +122,13 @@ namespace ComunikiMe.Api
             // Commands:
             services.AddTransient<CreateUserHandle, CreateUserHandle>();
             services.AddTransient<DeleteUserHandle, DeleteUserHandle>();
+            services.AddTransient<LoginEmailHandle, LoginEmailHandle>();
+            services.AddTransient<LoginUserNameHandle, LoginUserNameHandle>();
 
             // Queries:
             services.AddTransient<ListUserHandle, ListUserHandle>();
             services.AddTransient<SearchUserByIdHandle, SearchUserByIdHandle>();
+            services.AddTransient<SearchUserByEmailHandle, SearchUserByEmailHandle>();
             #endregion
 
             #region Products

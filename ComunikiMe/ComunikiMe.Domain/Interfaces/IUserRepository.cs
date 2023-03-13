@@ -22,6 +22,7 @@ namespace ComunikiMe.Domain.Interfaces
         User SearchById(Guid id);
 
         User SearchByEmail(string email);
+
         User SearchByUserName(string userName);
     }
 }

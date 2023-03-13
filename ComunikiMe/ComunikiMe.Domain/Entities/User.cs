@@ -19,7 +19,6 @@ namespace ComunikiMe.Domain.Entities
                 .Requires()
                 .IsNotEmpty(userName, "UserName", "The 'UserName' field cannot be empty!")
                 .IsEmail(email, "Email", "Enter a valid email address")
-                .IsNotEmpty(password, "Password", "The 'Password' field cannot be empty!")
             );
 
             if (IsValid)

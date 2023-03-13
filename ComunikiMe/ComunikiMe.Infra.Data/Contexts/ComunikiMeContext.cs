@@ -37,8 +37,8 @@ namespace ComunikiMe.Infra.Data.Contexts
             modelBuilder.Entity<User>().HasIndex(x => x.Email).IsUnique();
 
             // Adding Password
-            modelBuilder.Entity<User>().Property(x => x.Password).HasColumnType("VARCHAR(6)");
-            modelBuilder.Entity<User>().Property(x => x.Password).HasMaxLength(6);
+            modelBuilder.Entity<User>().Property(x => x.Password).HasColumnType("VARCHAR(200)");
+            modelBuilder.Entity<User>().Property(x => x.Password).HasMaxLength(200);
             modelBuilder.Entity<User>().Property(x => x.Password).IsRequired();
 
             // Adding InsertDate

@@ -111,8 +111,8 @@ namespace ComunikiMe.Infra.Data.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(6)
-                        .HasColumnType("VARCHAR(6)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR(200)");
 
                     b.Property<int>("Permission")
                         .HasColumnType("int");
